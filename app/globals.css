@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@layer components {
+  .shadow-1 {
+    box-shadow: 0 0 15px 0 rgba(21, 21, 21, 0.05);
+  }
+
+  .shadow-2 {
+    /* use exam color */
+    box-shadow: 0 0 15px 0 rgba(69, 86, 180, 0.3);
+  }
+
+  .input-1 {
+    @apply w-full bg-white  rounded px-6 py-4 outline-none border border-white focus:border-gray-200 transition-colors;
+  }
+
+  .button-1 {
+    @apply bg-teal-500 transition-colors hover:bg-teal-600 text-white px-6 py-3 rounded flex items-center justify-center gap-2 ;
+  }
+
+  .button-2 {
+    @apply border border-gray-200 px-4 py-2 text-sm lg:text-base text-nowrap rounded-full flex items-center justify-center gap-2 hover:border-gray-300 transition-colors;
+  }
+
+  .only-icon-mobile {
+    @apply w-12 h-12 px-1 py-1 lg:w-auto lg:h-auto lg:px-4 lg:py-2;
+  }
+}
+
+@layer utilities {
+  .myContainer {
+    @apply container mx-auto px-6;
+  }
+}
+
+@theme {
+    --color-exam: #4556b4;
+    --color-exam-light: #6675c4;
+    --color-exam-dark: #313e8c;
+    --color-exam-text: #ffffff;
+}
+
+@layer base {
+  :root {
+    --accent: #6ABD8A;
+    --background: theme('colors.gray.50');
+    --foreground: theme('colors.gray.900');
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter);
+}
